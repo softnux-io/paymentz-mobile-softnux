@@ -14,7 +14,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.2"
   bloc:
     dependency: transitive
     description:
@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  characters:
+    dependency: transitive
+    description:
+      name: characters
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   charcode:
     dependency: transitive
     description:
@@ -49,7 +56,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.14.12"
+    version: "1.14.13"
   convert:
     dependency: transitive
     description:
@@ -116,8 +123,8 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "3e32a226bb5d264e32fe53894a5b1645dd2d4948"
-      url: "git://github.com/oaacelasu/flutter_card_io_v2.git"
+      resolved-ref: "24ff1079b6fb1ee95534472de708a7e47766af5f"
+      url: "ssh://git@bitbucket.org/p_gateway/flutter_card_io_v2.git"
     source: git
     version: "0.0.1"
   flutter_kount:
@@ -126,7 +133,7 @@ packages:
       path: "."
       ref: master
       resolved-ref: "9358ef0c1f5f5ca6c13e06b09ffe6467a672b85a"
-      url: "git://github.com/oaacelasu/flutter_kount.git"
+      url: "ssh://git@bitbucket.org/p_gateway/flutter_kount.git"
     source: git
     version: "0.0.1"
   flutter_localizations:
@@ -140,7 +147,7 @@ packages:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.17.4"
+    version: "0.18.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -180,7 +187,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.6"
+    version: "0.12.8"
   meta:
     dependency: "direct main"
     description:
@@ -243,7 +250,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.0"
+    version: "3.0.4"
   platform:
     dependency: transitive
     description:
@@ -283,7 +290,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.3"
+    version: "1.9.5"
   stream_channel:
     dependency: transitive
     description:
@@ -311,14 +318,14 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.15"
+    version: "0.2.17"
   typed_data:
     dependency: transitive
     description:
       name: typed_data
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.6"
+    version: "1.2.0"
   vector_math:
     dependency: transitive
     description:
@@ -332,7 +339,7 @@ packages:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.6.1"
+    version: "4.2.0"
 sdks:
-  dart: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.0.0"
+  dart: ">=2.9.0-14.0.dev <3.0.0"
+  flutter: ">=1.18.0-6.0.pre <2.0.0"
