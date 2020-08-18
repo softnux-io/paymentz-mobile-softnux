@@ -38,7 +38,8 @@ class Validators {
   static String isValidNumber(BuildContext context, String cardType,
       String number, String mask, bool useLuhn) {
     var messages = S.of(context);
-    return ((!_validateCardNum(number) && useLuhn) ||
+    return (
+//        (!_validateCardNum(number) && useLuhn) ||
             cardType.isEmpty ||
             mask.replaceAll(' ', '').length != number.length)
         ? messages.add_card_invalid_number
