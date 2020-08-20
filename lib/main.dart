@@ -1,5 +1,5 @@
 import 'package:after_layout/after_layout.dart';
-import 'package:fluro/fluro.dart';
+import 'package:fluro/fluro.dart' as fluro;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -51,12 +51,12 @@ class _AppState extends State<App> with AfterLayoutMixin<App> {
 
   @override
   Widget build(BuildContext context) {
-    final router = new Router();
-    Routes.configureRoutes(router);
+    fluro.Router router = new fluro.Router();
+    Routing.configureRoutes(router);
 
     return MaterialApp(
         localizationsDelegates: delegates,
-        initialRoute: Routes.addCard,
+        initialRoute: Routing.addCard,
         supportedLocales: [
           const Locale('es', ''),
           const Locale('en', ''),
