@@ -12,8 +12,7 @@ class RepositoryUtils {
 
   static String getAuthToken(
       String paymentezClientAppCode, String appClientKey) {
-    String authTimeStamp =
-        "${(DateTime.now().millisecondsSinceEpoch / 1000).toInt()}";
+    String authTimeStamp = "${DateTime.now().second / 1000}";
     String stringAuthToken = paymentezClientAppCode +
         ";" +
         authTimeStamp +
