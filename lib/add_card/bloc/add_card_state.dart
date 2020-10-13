@@ -62,11 +62,7 @@ class AddCardState extends Equatable {
 
   AddCardState loading() {
     return copyWith(
-      isSubmitting: true,
-      isSuccess: false,
-      isFailure: false,
-      response:''
-    );
+        isSubmitting: true, isSuccess: false, isFailure: false, response: '');
   }
 
   AddCardState failure(dynamic response) {
@@ -74,7 +70,7 @@ class AddCardState extends Equatable {
       isSubmitting: false,
       isSuccess: false,
       isFailure: true,
-      response:response,
+      response: response,
     );
   }
 
@@ -83,7 +79,7 @@ class AddCardState extends Equatable {
       isSubmitting: false,
       isSuccess: true,
       isFailure: false,
-      response:response,
+      response: response,
     );
   }
 
@@ -99,7 +95,8 @@ class AddCardState extends Equatable {
       newNumberMaskFormatter = numberMaskFormatter;
 
     if (cardBin != null)
-      newNumberMaskFormatter.updateMask(cardBin.cardMask ?? numberDefaultMask);
+      newNumberMaskFormatter.updateMask(
+          mask: cardBin.cardMask ?? numberDefaultMask);
 
     return copyWith(
       cardBin: cardBin,
@@ -108,7 +105,7 @@ class AddCardState extends Equatable {
       isSubmitting: false,
       isSuccess: false,
       isFailure: false,
-      response:'',
+      response: '',
     );
   }
 
@@ -141,7 +138,8 @@ class AddCardState extends Equatable {
       tuyaCodeError: null,
       isSubmitting: null,
       isSuccess: null,
-      isFailure: null, response: null);
+      isFailure: null,
+      response: null);
 
   AddCardState copyWith({
     CardBinModel cardBin,
@@ -158,19 +156,18 @@ class AddCardState extends Equatable {
     dynamic response,
   }) {
     return AddCardState(
-      cardBin: cardBin ?? this.cardBin,
-      numberMaskFormatter: numberMaskFormatter ?? this.numberMaskFormatter,
-      nameError: nameError ?? this.nameError,
-      numberError: numberError ?? this.numberError,
-      dateExpError: dateExpError ?? this.dateExpError,
-      cvvError: cvvError ?? this.cvvError,
-      fiscalNumberError: fiscalNumberError ?? this.fiscalNumberError,
-      tuyaCodeError: tuyaCodeError ?? this.tuyaCodeError,
-      isSubmitting: isSubmitting ?? this.isSubmitting,
-      isSuccess: isSuccess ?? this.isSuccess,
-      isFailure: isFailure ?? this.isFailure,
-      response: response ?? this.response
-    );
+        cardBin: cardBin ?? this.cardBin,
+        numberMaskFormatter: numberMaskFormatter ?? this.numberMaskFormatter,
+        nameError: nameError ?? this.nameError,
+        numberError: numberError ?? this.numberError,
+        dateExpError: dateExpError ?? this.dateExpError,
+        cvvError: cvvError ?? this.cvvError,
+        fiscalNumberError: fiscalNumberError ?? this.fiscalNumberError,
+        tuyaCodeError: tuyaCodeError ?? this.tuyaCodeError,
+        isSubmitting: isSubmitting ?? this.isSubmitting,
+        isSuccess: isSuccess ?? this.isSuccess,
+        isFailure: isFailure ?? this.isFailure,
+        response: response ?? this.response);
   }
 
   @override
@@ -204,6 +201,6 @@ class AddCardState extends Equatable {
         isSubmitting,
         isSuccess,
         isFailure,
-    response
+        response
       ];
 }

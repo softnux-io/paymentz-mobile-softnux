@@ -51,12 +51,12 @@ class _AppState extends State<App> with AfterLayoutMixin<App> {
 
   @override
   Widget build(BuildContext context) {
-    fluro.Router router = new fluro.Router();
-    Routing.configureRoutes(router);
+    final router = new fluro.Router();
+    Routes.configureRoutes(router);
 
     return MaterialApp(
         localizationsDelegates: delegates,
-        initialRoute: Routing.addCard,
+        initialRoute: Routes.addCard,
         supportedLocales: [
           const Locale('es', ''),
           const Locale('en', ''),

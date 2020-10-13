@@ -48,6 +48,12 @@ class PaymentezRepository extends Equatable {
       {@required String sessionId, @required CardModel card}) async {
     print('${_configState.baseUrl}/v2/card/add');
 
+    _dio.options.headers = {
+      "Content-Type": "application/json",
+      "Auth-Token": RepositoryUtils.getAuthToken(
+          configState.clientAppCode, configState.clientAppKey)
+    };
+
     Response response = await _dio.post('/v2/card/add', data: {
       "session_id": await (kIsWeb?_getSessionIdForWeb(configState):FlutterKount.sessionId),
       "card": card.toJson(),
@@ -67,6 +73,11 @@ class PaymentezRepository extends Equatable {
   Future<CardBinModel> getCardBin({@required String bin}) async {
     try {
       print('${_configState.baseUrl}/v2/card_bin/$bin');
+      _dio.options.headers = {
+        "Content-Type": "application/json",
+        "Auth-Token": RepositoryUtils.getAuthToken(
+            configState.clientAppCode, configState.clientAppKey)
+      };
       Response response = await _dio.get('/v2/card_bin/$bin');
       print(response);
       return CardBinModel.fromJson(response.data);
