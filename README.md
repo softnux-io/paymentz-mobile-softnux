@@ -139,7 +139,7 @@ Paymentez AddCard SDK supports internationalization (spanish, english & portugue
 Before you can run the Paymentez AddCard SDK integration, you need to provide it with your Paymentez Credentials.
 
 1. If you don't have any Credentials yet, please ask your contact on Paymentez Team for it.
-2. Replace the ccapiClientAppCode and ccapiClientKey constants in Constants.java with your own Paymentez Client Credentials.
+2. Replace the ccapiClientAppCode and ccapiClientKey constants in Constants.dart with your own Paymentez Client Credentials.
 3. Run the Project.
 
 Important Note: if you only have one appCode, please asume that it's your ccapiClientAppCode. So you need to ask your contact on Paymentez Team for your ccapiClientKey.
