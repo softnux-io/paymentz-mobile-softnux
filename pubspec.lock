@@ -138,7 +138,7 @@ packages:
       path: "."
       ref: master
       resolved-ref: "24ff1079b6fb1ee95534472de708a7e47766af5f"
-      url: "ssh://git@bitbucket.org/paymentez/flutter_card_io_v2.git"
+      url: "https://git@bitbucket.org/paymentez/flutter_card_io_v2.git"
     source: git
     version: "0.0.1"
   flutter_kount:
@@ -147,7 +147,7 @@ packages:
       path: "."
       ref: master
       resolved-ref: "9358ef0c1f5f5ca6c13e06b09ffe6467a672b85a"
-      url: "ssh://git@bitbucket.org/paymentez/flutter_kount.git"
+      url: "https://git@bitbucket.org/paymentez/flutter_kount.git"
     source: git
     version: "0.0.1"
   flutter_localizations:
