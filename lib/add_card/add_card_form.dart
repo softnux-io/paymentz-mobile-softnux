@@ -11,6 +11,7 @@ import 'package:paymentez_mobile/generated/l10n.dart';
 import 'package:paymentez_mobile/repository/model/card_model.dart';
 import 'package:paymentez_mobile/repository/paymentez_repository.dart';
 import 'package:paymentez_mobile/utils/validators.dart';
+import 'package:paymentez_mobile/generated/l10n.dart' as _;
 
 class AddCardForm extends StatefulWidget {
   final PaymentezRepository _paymentezRepository;
@@ -18,6 +19,7 @@ class AddCardForm extends StatefulWidget {
   final Widget _aboveButton;
   final Function(Function) _summitButton;
   final Widget _belowButton;
+  final String language;
 
   AddCardForm(
       {Key key,
@@ -25,7 +27,8 @@ class AddCardForm extends StatefulWidget {
       Widget title,
       Widget aboveButton,
       Function(Function) summitButton,
-      Widget belowButton})
+      Widget belowButton,
+      this.language})
       : assert(paymentezRepository != null),
         _paymentezRepository = paymentezRepository,
         _aboveButton = aboveButton,
@@ -55,6 +58,8 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
   final _tuyaCodeFocus = FocusNode();
   AddCardBloc _addCardBloc;
   Map<String, dynamic> _cameraData;
+  S messages;
+
   PaymentezRepository get _paymentezRepository => widget._paymentezRepository;
   bool isButtonClicked = false;
 
@@ -101,6 +106,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
   }
 
   AppLifecycleState _notification;
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     print(state);
@@ -133,6 +139,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
     _cvvController.addListener(_onCvvChanged);
     _fiscalNumberController.addListener(_onFiscalNumberChanged);
     _tuyaCodeController.addListener(_onTuyaCodeChanged);
+    this.loadMessages();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -201,6 +208,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    if (messages == null) return CircularProgressIndicator();
     return BlocListener<AddCardBloc, AddCardState>(
       listener: (context, state) {
         if (state.isFailure) {
@@ -293,7 +301,6 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
       },
       child: BlocBuilder<AddCardBloc, AddCardState>(
         builder: (context, state) {
-          var messages = S.of(context);
           print('hola: ${_paymentezRepository.configState.isFlutterAppHost}');
 
           return Padding(
@@ -592,15 +599,18 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
 
     switch (text.length) {
       case 0:
-        _dateExpController.value = _maskDateExpFormatter.updateMask(mask:'XX/XX');
+        _dateExpController.value =
+            _maskDateExpFormatter.updateMask(mask: 'XX/XX');
         break;
       case 1:
         if (int.parse(text) > 1)
-          _dateExpController.value = _maskDateExpFormatter.updateMask(mask:'0X/XX');
+          _dateExpController.value =
+              _maskDateExpFormatter.updateMask(mask: '0X/XX');
         break;
       case 2:
         if (int.parse(text) > 12 || int.parse(text) == 0)
-          _dateExpController.value = _maskDateExpFormatter.updateMask(mask:'0X/XX');
+          _dateExpController.value =
+              _maskDateExpFormatter.updateMask(mask: '0X/XX');
         break;
     }
   }
@@ -635,5 +645,10 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
         card: card,
       ),
     );
+  }
+
+  void loadMessages() async {
+    this.messages = await _.S.load(Locale(widget.language ?? 'en'));
+    this.setState(() {});
   }
 }
