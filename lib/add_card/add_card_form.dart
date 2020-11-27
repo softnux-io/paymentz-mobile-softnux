@@ -10,6 +10,7 @@ import 'package:paymentez_mobile/add_card/bloc/bloc.dart';
 import 'package:paymentez_mobile/generated/l10n.dart';
 import 'package:paymentez_mobile/repository/model/card_model.dart';
 import 'package:paymentez_mobile/repository/paymentez_repository.dart';
+import 'package:paymentez_mobile/utils/string_utils.dart';
 import 'package:paymentez_mobile/utils/validators.dart';
 import 'package:paymentez_mobile/generated/l10n.dart' as _;
 
@@ -316,7 +317,8 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                     decoration: InputDecoration(
                         errorMaxLines: 3,
                         icon: Icon(Icons.person, size: 25.0),
-                        labelText: messages.add_card_name_label,
+                        labelText:
+                            StringUtils.getAddCardMessageLabel(widget.language),
                         hintText: messages.add_card_name_hint),
                     keyboardType: TextInputType.text,
                     autovalidate: true,
@@ -361,7 +363,8 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                                         });
                                       })),
                               hintText: messages.add_card_number_hint,
-                              labelText: messages.add_card_number_label),
+                              labelText: StringUtils.getAddCardNumberLabel(
+                                  widget.language)),
                           keyboardType: TextInputType.number,
                           autovalidate: true,
                           autocorrect: false,
@@ -396,8 +399,8 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                             keyboardType: TextInputType.datetime,
                             decoration: InputDecoration(
                                 icon: Icon(Icons.calendar_today, size: 25.0),
-                                labelText:
-                                    messages.add_card_expiration_date_label,
+                                labelText: StringUtils.getExpDateLabel(
+                                    widget.language),
                                 hintText:
                                     messages.add_card_expiration_date_hint,
                                 errorMaxLines: 3),
