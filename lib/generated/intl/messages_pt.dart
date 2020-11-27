@@ -21,6 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "add_card_button" : MessageLookupByLibrary.simpleMessage("Adicionar cartão"),
     "add_card_camera_instructions" : MessageLookupByLibrary.simpleMessage("Localize a frente do seu cartão\ndentro das guias e aguarde enquanto\no sistema captura a foto"),
     "add_card_cvc_amex_hint" : MessageLookupByLibrary.simpleMessage("1234"),
     "add_card_cvc_amex_label" : MessageLookupByLibrary.simpleMessage("CVV"),

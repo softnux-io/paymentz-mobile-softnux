@@ -274,6 +274,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Card`
+  String get add_card_button {
+    return Intl.message(
+      'Add Card',
+      name: 'add_card_button',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
