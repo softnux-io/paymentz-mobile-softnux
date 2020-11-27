@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:paymentez_mobile/generated/l10n.dart';
+import 'package:paymentez_mobile/utils/string_utils.dart';
 
 class Validators {
   static final RegExp _nameRegExp = RegExp(r'^[A-Za-zÀ-ÖØ-öø-ÿ ]+$');
@@ -13,7 +14,7 @@ class Validators {
   static String isValidFiscalNumber(BuildContext context, String name) {
     var messages = S.of(context);
     return (!_numericRegExp.hasMatch(name))
-        ? messages.add_card_invalid_fiscal_number
+        ? StringUtils.add_card_invalid_fiscal_number
         : '';
   }
 
@@ -27,7 +28,7 @@ class Validators {
   static String isValidCVV(BuildContext context, String value, cvvLength) {
     var messages = S.of(context);
     return (value.isEmpty || value.length != cvvLength)
-        ? messages.add_card_invalid_cvc
+        ? StringUtils.add_card_invalid_cvc
         : '';
   }
 
@@ -41,8 +42,8 @@ class Validators {
     return (
 //        (!_validateCardNum(number) && useLuhn) ||
             cardType.isEmpty ||
-            mask.replaceAll(' ', '').length != number.length)
-        ? messages.add_card_invalid_number
+                mask.replaceAll(' ', '').length != number.length)
+        ? StringUtils.add_card_invalid_number
         : '';
   }
 
@@ -50,7 +51,7 @@ class Validators {
     var messages = S.of(context);
 
     if (value.isEmpty) {
-      return messages.add_card_empty_expiration_date;
+      return StringUtils.add_card_empty_expiration_date;
     }
 
     int year;
