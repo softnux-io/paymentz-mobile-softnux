@@ -11,7 +11,7 @@ Add the SDK inside pubspec.yaml:
      dependencies:
 		paymentez_mobile:
 			git:
-      		  url: https://git@bitbucket.org/p_gateway/paymentez_mobile.git
+      		  url: https://git@bitbucket.org/paymentez/paymentez_mobile.git
       		  ref: master
 
 #
@@ -55,7 +55,7 @@ Project Configuration
 To use the SDK you have to add [flutter_bloc](https://pub.dev/packages/flutter_bloc) dependency inside pubspec.yaml :
 ##
 		dependencies:
-			flutter_bloc: ^6.x.x
+			flutter_bloc: ^4.x.x
 ##
 
 # Flutter integration
