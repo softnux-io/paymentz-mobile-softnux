@@ -17,9 +17,10 @@ void main() {
     BlocProvider(
       create: (context) => ConfigBloc()
         ..add(SetEnvironment(
-            testMode: '',
-            paymentezClientAppCode: '',
-            paymentezClientAppKey: '')),
+            testMode: 'prod',
+            isFlutterAppHost: true,
+            paymentezClientAppCode: 'SODEXO-CO-CLIENT',
+            paymentezClientAppKey: '2o2G0DmuAjM3SAx04qeqCHfV7tUaRC')),
       child: App(),
     ),
   );
