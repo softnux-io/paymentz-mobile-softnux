@@ -333,6 +333,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                         FocusScope.of(context).requestFocus(_numberFocus);
                       },
                     ),
+                    SizedBox(height: 10.0,),
                     Row(
                       children: <Widget>[
                         // Container(
@@ -382,6 +383,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                         ),
                       ],
                     ),
+                    SizedBox(height: 10.0,),
                     Visibility(
                       visible: !isTuyaForm(state),
                       child: Row(
@@ -533,7 +535,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
     var image =
         '${_paymentezRepository.configState.isFlutterAppHost ? 'packages/paymentez_mobile/' : ''}assets/images/card_generic.png';
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.only(right:8.0, left:3.0),
       child: SizedBox(
         width: 25.0,
         child: Visibility(
