@@ -115,7 +115,8 @@ class AddCardBloc extends Bloc<AddCardEvent, AddCardState> {
           cardBin?.cardType ?? '',
           number ?? '',
           cardBin?.cardMask ?? AddCardState.numberDefaultMask,
-          cardBin?.useLuhn ?? true),
+          //cardBin?.useLuhn ?? true),
+           true),
     );
   }
 

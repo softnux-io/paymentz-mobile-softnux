@@ -48,5 +48,15 @@ flutter:
     androidPackage: com.paymentez.paymentez_mobile
     iosBundleIdentifier: com.paymentez.paymentezMobile
 
+fonts:
+  - family: MarkForMC
+    fonts:
+      - asset: assets/fonts/MarkForMC-Lt.ttf
+        weight: 300
+      - asset: assets/fonts/MarkForMC-Med.ttf
+        weight: 500
+      - asset: assets/fonts/MarkForMC-Bold.ttf
+        weight: 700
+
 flutter_intl:
   enabled: true

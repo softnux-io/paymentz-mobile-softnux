@@ -58,6 +58,9 @@ class _AppState extends State<App> with AfterLayoutMixin<App> {
     return MaterialApp(
         localizationsDelegates: delegates,
         initialRoute: Routing.addCard,
+        theme: ThemeData(
+          fontFamily: 'MarkForMC'
+        ),
         supportedLocales: [
           const Locale('es', ''),
           const Locale('en', ''),

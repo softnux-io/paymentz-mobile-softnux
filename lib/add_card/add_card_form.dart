@@ -410,7 +410,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                                     icon:
                                         Icon(Icons.calendar_today, size: 25.0),
                                     labelText:
-                                        StringUtils.getAddCardNumberLabel(
+                                        StringUtils.getExpDateLabel(
                                             widget.language),
                                     hintText:
                                         messages.add_card_expiration_date_hint,
