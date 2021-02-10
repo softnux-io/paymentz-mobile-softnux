@@ -333,7 +333,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                         FocusScope.of(context).requestFocus(_numberFocus);
                       },
                     ),
-                    SizedBox(height: 10.0,),
+                    SizedBox(height: 15.0,),
                     Row(
                       children: <Widget>[
                         // Container(
@@ -383,7 +383,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                         ),
                       ],
                     ),
-                    SizedBox(height: 10.0,),
+                    SizedBox(height: 15.0,),
                     Visibility(
                       visible: !isTuyaForm(state),
                       child: Row(
