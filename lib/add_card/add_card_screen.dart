@@ -5,7 +5,6 @@ import 'package:paymentez_mobile/add_card/bloc/bloc.dart';
 import 'package:paymentez_mobile/channel/paymentez_channel.dart';
 import 'package:paymentez_mobile/repository/paymentez_repository.dart';
 
-
 class AddCardScreen extends StatelessWidget {
   final PaymentezRepository _paymentezRepository;
 
@@ -26,7 +25,10 @@ class AddCardScreen extends StatelessWidget {
       body: BlocProvider<AddCardBloc>(
         create: (context) =>
             AddCardBloc(paymentezRepository: _paymentezRepository),
-        child: AddCardForm(paymentezRepository: _paymentezRepository),
+        child: AddCardForm(
+          paymentezRepository: _paymentezRepository,
+          language: 'en',
+        ),
       ),
     );
   }
