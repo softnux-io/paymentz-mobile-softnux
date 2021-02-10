@@ -40,7 +40,7 @@ class Validators {
       String number, String mask, bool useLuhn) {
     var messages = S.of(context);
     return (
-//        (!_validateCardNum(number) && useLuhn) ||
+        (!_validateCardNum(number) && useLuhn) ||
             cardType.isEmpty ||
             mask.replaceAll(' ', '').length != number.length)
         ? StringUtils.add_card_invalid_number
