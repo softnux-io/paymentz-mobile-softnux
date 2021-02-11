@@ -67,7 +67,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
   bool get isPopulated => _addCardBloc.state.cardBin?.cardType != 'ex' &&
           _addCardBloc.state.cardBin?.cardType != 'ak'
       ? (_nameController.text.isNotEmpty &&
-          _numberController.text.isNotEmpty &&
+      (_numberController.text.isNotEmpty && Validators.validateCardNum(_numberController.text)) &&
           _dateExpController.text.isNotEmpty &&
           _cvvController.text.isNotEmpty)
       : (_nameController.text.isNotEmpty &&

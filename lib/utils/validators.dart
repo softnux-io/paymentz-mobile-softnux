@@ -40,7 +40,7 @@ class Validators {
       String number, String mask, bool useLuhn) {
     var messages = S.of(context);
     return (
-        (!_validateCardNum(number)) ||
+        (!validateCardNum(number)) ||
             cardType.isEmpty ||
             mask.replaceAll(' ', '').length != number.length)
         ? messages.add_card_invalid_number
@@ -134,7 +134,7 @@ class Validators {
 
   /// With the card number with Luhn Algorithm
   /// https://en.wikipedia.org/wiki/Luhn_algorithm
-  static bool _validateCardNum(String input) {
+  static bool validateCardNum(String input) {
     if (input.isEmpty) {
       return false;
     }
