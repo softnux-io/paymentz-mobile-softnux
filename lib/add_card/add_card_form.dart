@@ -376,8 +376,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
                                 print(state.response);
                                 return state.numberError.isNotEmpty &&
                                         _numberController
-                                            .value.text.isNotEmpty &&
-                                        isButtonClicked
+                                            .value.text.isNotEmpty
                                     ? state.numberError
                                     : null;
                               },
@@ -584,8 +583,7 @@ class _AddCardFormState extends State<AddCardForm> with WidgetsBindingObserver {
     );
   }
 
-  void _onNumberChanged() {
-    _addCardBloc.add(NumberChanged(context,
+  void _onNumberChanged() {_addCardBloc.add(NumberChanged(context,
         number: _numberController.value.text.replaceAll(' ', '')));
     if (_cvvController.value.text.isNotEmpty) _onCvvChanged();
   }

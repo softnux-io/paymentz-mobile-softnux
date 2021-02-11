@@ -1,5 +1,5 @@
 class StringUtils {
-  static getAddCardMessageLabel(String language) {
+  static String getAddCardMessageLabel(String language) {
     if (language.contains('es')) {
       return "Nombre del titular";
     } else if (language.contains('pt')) {
@@ -9,7 +9,7 @@ class StringUtils {
     }
   }
 
-  static getAddCardNumberLabel(String language) {
+  static String getAddCardNumberLabel(String language) {
     if (language.contains('es')) {
       return "Número de tarjeta";
     } else if (language.contains('pt')) {
@@ -19,7 +19,7 @@ class StringUtils {
     }
   }
 
-  static getExpDateLabel(String language) {
+  static String getExpDateLabel(String language) {
     if (language.contains('es')) {
       return "Fecha de vto.";
     } else if (language.contains('pt')) {
@@ -30,7 +30,7 @@ class StringUtils {
   }
 
 
-  static add_card_invalid_fiscal_number(String language) {
+  static String add_card_invalid_fiscal_number(String language) {
     if (language.contains('es')) {
       return "El documento de Identificación no es valido.";
     } else if (language.contains('pt')) {
@@ -40,7 +40,7 @@ class StringUtils {
     }
   }
 
-  static add_card_invalid_cvc(String language) {
+  static String add_card_invalid_cvc(String language) {
     if (language.contains('es')) {
       return "El código de seguridad de la tarjeta no es válido.";
     } else if (language.contains('pt')) {
@@ -50,7 +50,7 @@ class StringUtils {
     }
   }
 
-  static add_card_invalid_number(String language) {
+  static String add_card_invalid_number(String language) {
     if (language.contains('es')) {
       return "El número de tarjeta no es válido.";
     } else if (language.contains('pt')) {
@@ -60,7 +60,7 @@ class StringUtils {
     }
   }
 
-  static add_card_empty_expiration_date(String language) {
+  static String add_card_empty_expiration_date(String language) {
     if (language.contains('es')) {
       return "Por favor ingresa la fecha de vencimiento de la tarjet";
     } else if (language.contains('pt')) {

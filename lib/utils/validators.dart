@@ -14,7 +14,7 @@ class Validators {
   static String isValidFiscalNumber(BuildContext context, String name) {
     var messages = S.of(context);
     return (!_numericRegExp.hasMatch(name))
-        ? StringUtils.add_card_invalid_fiscal_number
+        ? messages.add_card_invalid_fiscal_number
         : '';
   }
 
@@ -28,7 +28,7 @@ class Validators {
   static String isValidCVV(BuildContext context, String value, cvvLength) {
     var messages = S.of(context);
     return (value.isEmpty || value.length != cvvLength)
-        ? StringUtils.add_card_invalid_cvc
+        ? messages.add_card_invalid_cvc
         : '';
   }
 
@@ -40,10 +40,10 @@ class Validators {
       String number, String mask, bool useLuhn) {
     var messages = S.of(context);
     return (
-        (!_validateCardNum(number) && useLuhn) ||
+        (!_validateCardNum(number)) ||
             cardType.isEmpty ||
             mask.replaceAll(' ', '').length != number.length)
-        ? StringUtils.add_card_invalid_number
+        ? messages.add_card_invalid_number
         : '';
   }
 
@@ -51,7 +51,7 @@ class Validators {
     var messages = S.of(context);
 
     if (value.isEmpty) {
-      return StringUtils.add_card_empty_expiration_date;
+      return messages.add_card_empty_expiration_date;
     }
 
     int year;
