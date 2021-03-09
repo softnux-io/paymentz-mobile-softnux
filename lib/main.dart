@@ -19,8 +19,8 @@ void main() {
         ..add(SetEnvironment(
             testMode: 'prod',
             isFlutterAppHost: true,
-            paymentezClientAppCode: 'SODEXO-CO-CLIENT',
-            paymentezClientAppKey: '2o2G0DmuAjM3SAx04qeqCHfV7tUaRC')),
+            paymentezClientAppCode: '',
+            paymentezClientAppKey: '')),
       child: App(),
     ),
   );
