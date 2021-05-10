@@ -19,7 +19,7 @@ dependencies:
   path_provider: ^2.0.1
   after_layout: ^1.0.7+2
   crypto: ^3.0.1
-  flutter_svg: ^0.18.0
+  flutter_svg: ^0.22.0
   mask_text_input_formatter: ^1.0.6
   fluro: ^1.6.3
 
