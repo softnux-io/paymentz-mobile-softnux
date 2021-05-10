@@ -17,9 +17,8 @@ import 'package:paymentez_mobile/utils/validators.dart';
 class AddCardBloc extends Bloc<AddCardEvent, AddCardState> {
   PaymentezRepository _paymentezRepository;
 
-  AddCardBloc({
-    @required PaymentezRepository paymentezRepository,
-  })  : assert(paymentezRepository != null),
+  AddCardBloc({@required PaymentezRepository paymentezRepository,})
+      : assert(paymentezRepository != null),
         _paymentezRepository = paymentezRepository;
 
   @override
